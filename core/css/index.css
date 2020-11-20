@@ -1,5 +1,11 @@
 html body {
-  background-color: #161420; }
+  /* background-color: #161420; */
+  background: rgb(31,31,66);
+  background: -moz-radial-gradient(circle, rgba(31,31,66,1) 7%, rgba(22,20,32,1) 71%, rgba(22,20,32,1) 80%);
+  background: -webkit-radial-gradient(circle, rgba(31,31,66,1) 7%, rgba(22,20,32,1) 71%, rgba(22,20,32,1) 80%);
+  background: radial-gradient(circle, rgba(31,31,66,1) 7%, rgba(22,20,32,1) 71%, rgba(22,20,32,1) 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1f1f42",endColorstr="#161420",GradientType=1);
+}
   html body #juego {
     width: 2014px;
     height: 768px; }

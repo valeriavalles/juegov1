@@ -3,6 +3,8 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+.sass-cache/
+.vscode
 
 # Other files and folders
 .settings/

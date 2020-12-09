@@ -1,10 +1,12 @@
 html body {
   background-color: #161420;
-  background-image: linear-gradient(90deg, #161420 18%, #1e1f4c 48%, #1f1d2f 90%);
   font-family: "zizou-slab-regular", Helvetica, Arial, sans-serif; }
   html body #juego {
     width: 2014px;
     height: 768px; }
+  @media (min-width: 1024px) {
+    html body {
+      background-image: linear-gradient(90deg, #161420 18%, #1e1f4c 48%, #1f1d2f 90%); } }
 
 html body #juego {
   position: relative;
@@ -63,7 +65,10 @@ html body #juego {
       font-family: 'sgothic-bdcap';
       color: white;
       font-size: 33px;
-      line-height: 1.9; }
+      line-height: 1.9;
+      outline: none;
+      border: none;
+      background-color: transparent; }
       .bg-login form .bg-btn:hover {
         text-decoration: none; }
     .bg-login form .content-btn-lg {
@@ -72,6 +77,89 @@ html body #juego {
       bottom: -15px;
       left: 0;
       text-align: center; }
+    .bg-login form .bold {
+      font-weight: 700; }
+    .bg-login form span {
+      font-size: 12px; }
+    .bg-login form .text-error {
+      color: #DB1D1D; }
+
+/* The Modal (background) */
+.modalgamer {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  /* Modal Content */
+  /* The Close Button */ }
+  .modalgamer .modal-content-gamer {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    background-image: url("../../assets/img/bg-login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    text-align: center;
+    height: 480px; }
+    @media screen and (min-width: 768px) {
+      .modalgamer .modal-content-gamer {
+        padding: 30px;
+        max-width: 700px; } }
+    .modalgamer .modal-content-gamer > div {
+      background-color: white;
+      height: 100%;
+      position: relative; }
+      .modalgamer .modal-content-gamer > div .header-icon {
+        position: absolute;
+        right: 0; }
+    .modalgamer .modal-content-gamer .modal-main {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .modalgamer .modal-content-gamer .modal-main h2 {
+        font-size: 1.875rem;
+        font-family: 'sgothic-bdcap'; }
+      .modalgamer .modal-content-gamer .modal-main p {
+        font-size: 22px;
+        margin: 20px 0;
+        padding: 0 20px; }
+      .modalgamer .modal-content-gamer .modal-main .c-btns-modal a {
+        font-size: 30px;
+        margin: 25px 5px;
+        padding: 10px 20px;
+        color: #A08958;
+        font-family: 'sgothic-bdcap';
+        border: 2px solid transparent; }
+        .modalgamer .modal-content-gamer .modal-main .c-btns-modal a:last-child {
+          border: 2px solid #A08958; }
+        .modalgamer .modal-content-gamer .modal-main .c-btns-modal a:hover {
+          text-decoration: none;
+          border: 2px solid #A08958; }
+  .modalgamer .close-gamer {
+    color: #aaaaaa;
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: .2;
+    padding: 20px; }
+  .modalgamer .close-gamer:hover,
+  .modalgamer .close-gamer:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer; }
+
+.c-premio-time {
+  background-color: white; }
 
 footer {
   background-color: #222222;

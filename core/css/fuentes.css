@@ -93,6 +93,18 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'DS-DiGI';
+	src: url('../fonts/DS-DIGI.ttf');
+	src: url('../fonts/DS-DIGI.ttf') format('embedded-opentype'),
+	     /* url('../fonts/DS-DIGI.TTF.woff') format('woff'), */
+	     url('../fonts/DS-DIGI.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+
 
 
 

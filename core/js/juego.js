@@ -2,7 +2,7 @@ Crafty.init(1024, 576, document.getElementById('juego'));
 
 var obj = {
     "sprites": {
-        // "../core/img/tapa.png": { // Carga el objeto desde una carpeta en la raiz del proyecto
+        // "core/img/tapa.png": { // Carga el objeto desde una carpeta en la raiz del proyecto
         // //"http://localhost/upcJuego2/objs/tapa256.png": { // Carga el objeto desde una URL
         // // "tapa.png": { // carga el objeto desde la raiz del proyecto
         //     tile: 128, // Ancho de la imagen
@@ -52,6 +52,34 @@ var obj = {
             tileh: 45,
             map: {
                 botSalirPres: [0, 0]
+            }
+        },
+        "../core/img/barra1.png": {
+            tile: 130,
+            tileh: 20,
+            map: {
+                Barra1: [0, 0]
+            }
+        },
+        "../core/img/barra2.png": {
+            tile: 130,
+            tileh: 20,
+            map: {
+                Barra2: [0, 0]
+            }
+        },
+        "../core/img/barra3.png": {
+            tile: 130,
+            tileh: 20,
+            map: {
+                Barra3: [0, 0]
+            }
+        },
+        "../core/img/barra4.png": {
+            tile: 130,
+            tileh: 20,
+            map: {
+                Barra4: [0, 0]
             }
         },
         // ======= Juego 1 =======
@@ -141,17 +169,64 @@ var obj = {
                 gra1: [0, 0]
             }
         },
-        "../core/img/btnJ4.png": {
+        // "../core/img/btnJ4.png": {
+        //     tile: 50,
+        //     tileh: 50,
+        //     map: {
+        //         btnJ4: [0, 0]
+        //     }
+        // },
+        "../core/img/btnJ4-1.png": {
             tile: 50,
             tileh: 50,
             map: {
-                btnJ4: [0, 0]
+                btnJ4_1: [0, 0]
+            }
+        },
+        "../core/img/btnJ4-2.png": {
+            tile: 50,
+            tileh: 50,
+            map: {
+                btnJ4_2: [0, 0]
+            }
+        },
+        "../core/img/btnJ4-3.png": {
+            tile: 50,
+            tileh: 50,
+            map: {
+                btnJ4_3: [0, 0]
+            }
+        },
+        "../core/img/btnJ4-4.png": {
+            tile: 50,
+            tileh: 50,
+            map: {
+                btnJ4_4: [0, 0]
+            }
+        },
+        "../core/img/btnJ4-5.png": {
+            tile: 50,
+            tileh: 50,
+            map: {
+                btnJ4_5: [0, 0]
             }
         }
     },
 };
 
-Crafty.load(obj);
+Crafty.load(obj,
+    function(){
+        Crafty.scene('ini1');
+        //Crafty.scene('nivel4');
+    },
+
+    function(e) { //progreso
+    },
+
+    function(e) {
+        Crafty.log('Error...');
+    }
+);
 
 Crafty.scene('ini1', function(){
 
@@ -170,27 +245,33 @@ Crafty.scene('nivel1', function(){
 
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo.png');
 
-    let tiempo1 = Crafty.e("2D, Canvas, Text").attr({x: 720, y: 30}).text('Tiempo Transcurrido: 0s')
+    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 1')
+        .textColor('#FFF')
+        .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
+
+    Crafty.e("2D, Canvas, Barra1").attr({ x: 162, y: 22 });
+
+    let tiempo1 = Crafty.e("2D, Canvas, Text").attr({x: 820, y: 20}).text('Tiempo: 0s')
         .textColor('#AAA')
         .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
 
-    Crafty.e("2D, Canvas, Text").attr({ x: 220, y: 140 }).text("¿DONDE PUEDO VER MIS NOTAS?")
+    Crafty.e("2D, Canvas, Text").attr({ x: 110, y: 170 }).text("¿DESDE QUÉ PLATAFORMA ACCEDO A MI CORREO UPC?")
         .textColor('#FFF')
-        .textFont({ size: '56px', family: 'solano_gothic_mvb_stdBd' });
+        .textFont({ size: '46px', family: 'solano_gothic_mvb_stdBd' });
 
-    let bot1 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 230 }).image('../core/img/b1_1.png');
-    let bot2 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 230 }).image('../core/img/b1_2.png');
-    let bot3 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 230 }).image('../core/img/b1_3.png');
-    let bot4 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 320 }).image('../core/img/b1_4.png');
-    let bot5 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 320 }).image('../core/img/b1_5.png');
-    let bot6 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 320 }).image('../core/img/b1_6.png');
+    let bot1 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 260 }).image('../core/img/b1_1.png');
+    let bot2 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 260 }).image('../core/img/b1_2.png');
+    let bot3 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 260 }).image('../core/img/b1_3.png');
+    let bot4 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 350 }).image('../core/img/b1_4.png');
+    let bot5 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 350 }).image('../core/img/b1_5.png');
+    let bot6 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 350 }).image('../core/img/b1_6.png');
 
-    let tapa1 = Crafty.e("2D, Canvas, b1_E").attr({ x: 50, y: 230 });
-    let tapa2 = Crafty.e("2D, Canvas, b1_E").attr({ x: 360, y: 230 });
-    let tapa3 = Crafty.e("2D, Canvas, b1_E").attr({ x: 670, y: 230 });
-    let tapa4 = Crafty.e("2D, Canvas, b1_C").attr({ x: 50, y: 320 });
-    let tapa5 = Crafty.e("2D, Canvas, b1_E").attr({ x: 360, y: 320 });
-    let tapa6 = Crafty.e("2D, Canvas, b1_E").attr({ x: 670, y: 320 });
+    let tapa1 = Crafty.e("2D, Canvas, b1_E").attr({ x: 50, y: 260 });
+    let tapa2 = Crafty.e("2D, Canvas, b1_E").attr({ x: 360, y: 260 });
+    let tapa3 = Crafty.e("2D, Canvas, b1_E").attr({ x: 670, y: 260 });
+    let tapa4 = Crafty.e("2D, Canvas, b1_C").attr({ x: 50, y: 350 });
+    let tapa5 = Crafty.e("2D, Canvas, b1_E").attr({ x: 360, y: 350 });
+    let tapa6 = Crafty.e("2D, Canvas, b1_E").attr({ x: 670, y: 350 });
 
     ocultarTapa();
 
@@ -247,14 +328,14 @@ Crafty.scene('nivel1', function(){
         tiempoDisp = setInterval(function(){
             tj1 = tj1 + 1;
             Crafty.log('var t: '+tj1);
-            tiempo1.text('Tiempo Transcurrido: '+tj1+'s');
+            tiempo1.text('Tiempo: '+tj1+'s');
         }, 1000);
     }
 
     // ======= Boton Salir =======
 
-    btnSalir = Crafty.e("2D, Canvas, Mouse, botSalir").attr({x:700, y:470});
-    btnSalirPres = Crafty.e("2D, Canvas, botSalirPres").attr({x:700, y:470});
+    btnSalir = Crafty.e("2D, Canvas, Mouse, botSalir").attr({x:700, y:520});
+    btnSalirPres = Crafty.e("2D, Canvas, botSalirPres").attr({x:700, y:520});
     btnSalirPres.visible = false;
 
     btnSalir.bind('MouseOver', function(MouseEvent){
@@ -286,9 +367,15 @@ Crafty.scene('nivel2', function(){
 
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo.png');
 
-    Crafty.e("2D, Canvas, Text").attr({ x: 50, y: 40 }).text("ENCUENTRA LAS PALABRAS:")
+    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 2')
         .textColor('#FFF')
-        .textFont({ size: '56px', family: 'solano_gothic_mvb_stdBd' });
+        .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
+
+    Crafty.e("2D, Canvas, Barra2").attr({ x: 162, y: 22 });
+
+    Crafty.e("2D, Canvas, Text").attr({ x: 80, y: 90 }).text("¿COMO ME CONTACTO CON LA UPC?")
+        .textColor('#FFF')
+        .textFont({ size: '48px', family: 'solano_gothic_mvb_stdBd' });
 
     let fondo_p1 = Crafty.e("2D, Canvas, Color").attr({x: 700, y: 135, w: 265, h: 57}).color('#FFF');
     let fondo_p2 = Crafty.e("2D, Canvas, Color").attr({x: 700, y: 212, w: 265, h: 57}).color('#FFF');
@@ -301,14 +388,14 @@ Crafty.scene('nivel2', function(){
     Crafty.e("2D, Canvas, Text").attr({x: 740, y: 227}).text('CONTACTO WEB')
         .textColor('#000')
         .textFont({size: '30px', family: 'solano_gothic_mvb_stdBd'});
-    Crafty.e("2D, Canvas, Text").attr({x: 740, y: 305}).text('WHATSAPP IT SERVICE')
+    Crafty.e("2D, Canvas, Text").attr({x: 740, y: 305}).text('WHATSAPP IT')
         .textColor('#000')
         .textFont({size: '30px', family: 'solano_gothic_mvb_stdBd'});
     Crafty.e("2D, Canvas, Text").attr({x: 740, y: 382}).text('ALMA')
         .textColor('#000')
         .textFont({size: '30px', family: 'solano_gothic_mvb_stdBd'});
 
-    let tiempo2 = Crafty.e("2D, Canvas, Text").attr({x: 720, y: 30}).text('Tiempo Transcurrido: 0s')
+    let tiempo2 = Crafty.e("2D, Canvas, Text").attr({x: 820, y: 20}).text('Tiempo: 0s')
         .textColor('#AAA')
         .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
 
@@ -335,23 +422,23 @@ Crafty.scene('nivel2', function(){
 
     genPos();
 
-    eval('p'+arrPos[0]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[0]+'").attr({x: 90, y:140})');
-    eval('p'+arrPos[1]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[1]+'").attr({x: 240, y:140})');
-    eval('p'+arrPos[2]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[2]+'").attr({x: 90, y:290})');
-    eval('p'+arrPos[3]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[3]+'").attr({x: 240, y:290})');
-    eval('p'+arrPos[4]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[4]+'").attr({x: 390, y:140})');
-    eval('p'+arrPos[5]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[5]+'").attr({x: 540, y:140})');
-    eval('p'+arrPos[6]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[6]+'").attr({x: 390, y:290})');
-    eval('p'+arrPos[7]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[7]+'").attr({x: 540, y:290})');
+    eval('p'+arrPos[0]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[0]+'").attr({x: 80, y:180})');
+    eval('p'+arrPos[1]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[1]+'").attr({x: 230, y:180})');
+    eval('p'+arrPos[2]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[2]+'").attr({x: 80, y:330})');
+    eval('p'+arrPos[3]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[3]+'").attr({x: 230, y:330})');
+    eval('p'+arrPos[4]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[4]+'").attr({x: 380, y:180})');
+    eval('p'+arrPos[5]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[5]+'").attr({x: 530, y:180})');
+    eval('p'+arrPos[6]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[6]+'").attr({x: 380, y:330})');
+    eval('p'+arrPos[7]+' = Crafty.e("2D, Canvas, Mouse, p'+arrPos[7]+'").attr({x: 530, y:330})');
 
-    eval('tapa'+arrPos[0]+' = Crafty.e("2D, Canvas, tapa").attr({x: 90, y:140})');
-    eval('tapa'+arrPos[1]+' = Crafty.e("2D, Canvas, tapa").attr({x: 240, y:140})');
-    eval('tapa'+arrPos[2]+' = Crafty.e("2D, Canvas, tapa").attr({x: 90, y:290})');
-    eval('tapa'+arrPos[3]+' = Crafty.e("2D, Canvas, tapa").attr({x: 240, y:290})');
-    eval('tapa'+arrPos[4]+' = Crafty.e("2D, Canvas, tapa").attr({x: 390, y:140})');
-    eval('tapa'+arrPos[5]+' = Crafty.e("2D, Canvas, tapa").attr({x: 540, y:140})');
-    eval('tapa'+arrPos[6]+' = Crafty.e("2D, Canvas, tapa").attr({x: 390, y:290})');
-    eval('tapa'+arrPos[7]+' = Crafty.e("2D, Canvas, tapa").attr({x: 540, y:290})');
+    eval('tapa'+arrPos[0]+' = Crafty.e("2D, Canvas, tapa").attr({x: 80, y:180})');
+    eval('tapa'+arrPos[1]+' = Crafty.e("2D, Canvas, tapa").attr({x: 230, y:180})');
+    eval('tapa'+arrPos[2]+' = Crafty.e("2D, Canvas, tapa").attr({x: 80, y:330})');
+    eval('tapa'+arrPos[3]+' = Crafty.e("2D, Canvas, tapa").attr({x: 230, y:330})');
+    eval('tapa'+arrPos[4]+' = Crafty.e("2D, Canvas, tapa").attr({x: 380, y:180})');
+    eval('tapa'+arrPos[5]+' = Crafty.e("2D, Canvas, tapa").attr({x: 530, y:180})');
+    eval('tapa'+arrPos[6]+' = Crafty.e("2D, Canvas, tapa").attr({x: 380, y:330})');
+    eval('tapa'+arrPos[7]+' = Crafty.e("2D, Canvas, tapa").attr({x: 530, y:330})');
 
     var puntaje = 0;
 
@@ -544,14 +631,14 @@ Crafty.scene('nivel2', function(){
         tiempoDisp = setInterval(function(){
             tj2 = tj2 + 1;
             //Crafty.log('var t: '+tj2);
-            tiempo2.text('Tiempo Transcurrido: '+tj2+'s');
+            tiempo2.text('Tiempo: '+tj2+'s');
         }, 1000);
     }
 
     // ======= Boton Salir =======
 
-    btnSalir = Crafty.e("2D, Canvas, Mouse, botSalir").attr({x:700, y:470});
-    btnSalirPres = Crafty.e("2D, Canvas, botSalirPres").attr({x:700, y:470});
+    btnSalir = Crafty.e("2D, Canvas, Mouse, botSalir").attr({x:700, y:520});
+    btnSalirPres = Crafty.e("2D, Canvas, botSalirPres").attr({x:700, y:520});
     btnSalirPres.visible = false;
 
     btnSalir.bind('MouseOver', function(MouseEvent){
@@ -584,14 +671,24 @@ Crafty.scene('ini3', function(){
 Crafty.scene('nivel3', function(){
 
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
-    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:90 }).image('../core/img/fondo_juego3.png');
-    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:460 }).image('../core/img/pasto.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:110 }).image('../core/img/fondo_juego3.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:480 }).image('../core/img/pasto.png');
 
-    let tiempo3 = Crafty.e("2D, Canvas, Text").attr({x: 720, y: 30}).text('Tiempo Transcurrido: 0s')
+    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 3')
+        .textColor('#FFF')
+        .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
+
+    Crafty.e("2D, Canvas, Barra3").attr({ x: 162, y: 22 });
+
+    Crafty.e("2D, Canvas, Text").attr({ x: 80, y: 75 }).text("ENCUENTRA LAS PALABRAS")
+        .textColor('#FFF')
+        .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
+
+    let tiempo3 = Crafty.e("2D, Canvas, Text").attr({x: 820, y: 20}).text('Tiempo: 0s')
         .textColor('#AAA')
         .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
 
-    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 520}).text('* Selecciona la primera y la ultima letra de la palabra que has encontrado')
+    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 540}).text('* Selecciona la primera y la ultima letra de la palabra que has encontrado')
         .textColor('#FFF')
         .textFont({ size: '16px' });
 
@@ -638,28 +735,28 @@ Crafty.scene('nivel3', function(){
     let vaa9 = 0;
     let vaa10 = 0;
 
-    let aa1 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 80, y:90, w: 42, h: 42 });
-    let aa2 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:90, w: 42, h: 42 });
+    let aa1 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 80, y:110, w: 42, h: 42 });
+    let aa2 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:110, w: 42, h: 42 });
 
-    let aa3 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 125, y:135, w: 42, h: 42 });
-    let aa4 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:135, w: 42, h: 42 });
+    let aa3 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 125, y:155, w: 42, h: 42 });
+    let aa4 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:155, w: 42, h: 42 });
 
-    let aa5 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 80, y:225, w: 42, h: 42 });
-    let aa6 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:225, w: 42, h: 42 });
+    let aa5 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 80, y:245, w: 42, h: 42 });
+    let aa6 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:245, w: 42, h: 42 });
 
-    let aa7 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 80, y:314.7, w: 42, h: 42 });
-    let aa8 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 530, y:314.7, w: 42, h: 42 });
+    let aa7 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 80, y:334.7, w: 42, h: 42 });
+    let aa8 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 395, y:334.7, w: 42, h: 42 });
 
-    let aa9 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 574.7, y:90, w: 42, h: 42 });
-    let aa10 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 574.7, y:405, w: 42, h: 42 });
+    let aa9 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 574.7, y:110, w: 42, h: 42 });
+    let aa10 = Crafty.e("2D, Canvas, Mouse, Color").attr({ x: 574.7, y:425, w: 42, h: 42 });
 
     // ======= Palabras =======
 
-    let pal1 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:90 }).image('../core/img/pal1.png');
-    let pal2 = Crafty.e("2D, Canvas, Image").attr({ x: 125, y:135 }).image('../core/img/pal2.png');
-    let pal3 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:225 }).image('../core/img/pal3.png');
-    let pal4 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:315 }).image('../core/img/pal4.png');
-    let pal5 = Crafty.e("2D, Canvas, Image").attr({ x: 574.7, y:90 }).image('../core/img/pal5.png');
+    let pal1 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:110 }).image('../core/img/pal1.png');
+    let pal2 = Crafty.e("2D, Canvas, Image").attr({ x: 125, y:155 }).image('../core/img/pal2.png');
+    let pal3 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:245 }).image('../core/img/pal3.png');
+    let pal4 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:335 }).image('../core/img/pal4.png');
+    let pal5 = Crafty.e("2D, Canvas, Image").attr({ x: 574.7, y:110 }).image('../core/img/pal5.png');
 
     pal1.visible = false;
     pal2.visible = false;
@@ -767,14 +864,14 @@ Crafty.scene('nivel3', function(){
         tiempoDisp = setInterval(function(){
             tj3 = tj3 + 1;
             Crafty.log('var t: '+tj3);
-            tiempo3.text('Tiempo Transcurrido: '+tj3+'s');
+            tiempo3.text('Tiempo: '+tj3+'s');
         }, 1000);
     }
 
     // ======= Boton Salir =======
 
-    btnSalir = Crafty.e("2D, Canvas, Mouse, botSalir").attr({x:700, y:470});
-    btnSalirPres = Crafty.e("2D, Canvas, botSalirPres").attr({x:700, y:470});
+    btnSalir = Crafty.e("2D, Canvas, Mouse, botSalir").attr({x:700, y:520});
+    btnSalirPres = Crafty.e("2D, Canvas, botSalirPres").attr({x:700, y:520});
     btnSalirPres.visible = false;
 
     btnSalir.bind('MouseOver', function(MouseEvent){
@@ -808,67 +905,78 @@ Crafty.scene('nivel4', function(){
 
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
 
-    Crafty.e("2D, Canvas, Text").attr({ x: 290, y: 40 }).text("ASOCIA LOS CONCEPTOS")
+    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 4')
         .textColor('#FFF')
-        .textFont({ size: '56px', family: 'solano_gothic_mvb_stdBd' });
+        .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
 
-    Crafty.e("2D, Canvas, gra1")
-        .attr({x: 231, y:55});
+    Crafty.e("2D, Canvas, Barra4").attr({ x: 162, y: 22 });
 
-    Crafty.e("2D, Canvas, gra1")
-        .attr({x: 720, y:55});
+    Crafty.e("2D, Canvas, Text").attr({ x: 320, y: 65 }).text("ASOCIA LOS CONCEPTOS")
+        .textColor('#FFF')
+        .textFont({ size: '45px', family: 'solano_gothic_mvb_stdBd' });
 
-    let tiempo4 = Crafty.e("2D, Canvas, Text").attr({x: 720, y: 100}).text('Tiempo Transcurrido: 0s')
+    let tiempo4 = Crafty.e("2D, Canvas, Text").attr({x: 820, y: 20}).text('Tiempo: 0s')
         .textColor('#AAA')
         .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
 
-    var opciones = {
-        maxParticles: 150,
-        size: 18,
-        sizeRandom: 4,
-        speed: 1,
-        speedRandom: 1.2,
-        // Lifespan in frames
-        lifeSpan: 29,
-        lifeSpanRandom: 7,
-        // Angle is calculated clockwise: 12pm is 0deg, 3pm is 90deg etc.
-        angle: 0,
-        angleRandom: 34,
-        startColour: [255, 131, 0, 1],
-        startColourRandom: [48, 50, 45, 0],
-        endColour: [245, 35, 0, 0],
-        endColourRandom: [60, 60, 60, 0],
-        // Only applies when fastMode is off, specifies how sharp the gradients are drawn
-        sharpness: 20,
-        sharpnessRandom: 10,
-        // Random spread from origin
-        spread: 10,
-        // How many frames should this last
-        duration: -1,
-        // Will draw squares instead of circle gradients
-        fastMode: false,
-        gravity: { x: 0, y: -0.05 },
-        // sensible values are 0-3
-        jitter: 0,
-        // Offset for the origin of the particles
-        originOffset: {x: 25, y: 50}
-        };
+    // Crafty.e("2D, Canvas, gra1")
+    //     .attr({x: 231, y:55});
 
-    Crafty.e("2D, Canvas, Particles")
-        .attr({ x: 220, y:10, w: 50, h: 50 })
-        //.addComponent('WiredMBR')
-        .particles(opciones);
+    // Crafty.e("2D, Canvas, gra1")
+    //     .attr({x: 720, y:55});
 
-    Crafty.e("2D, Canvas, Particles")
-        .attr({ x: 710, y:10, w: 50, h: 50 })
-        //.addComponent('WiredMBR')
-        .particles(opciones);
+    // var opciones = {
+    //     maxParticles: 150,
+    //     size: 18,
+    //     sizeRandom: 4,
+    //     speed: 1,
+    //     speedRandom: 1.2,
+    //     // Lifespan in frames
+    //     lifeSpan: 29,
+    //     lifeSpanRandom: 7,
+    //     // Angle is calculated clockwise: 12pm is 0deg, 3pm is 90deg etc.
+    //     angle: 0,
+    //     angleRandom: 34,
+    //     startColour: [255, 131, 0, 1],
+    //     startColourRandom: [48, 50, 45, 0],
+    //     endColour: [245, 35, 0, 0],
+    //     endColourRandom: [60, 60, 60, 0],
+    //     // Only applies when fastMode is off, specifies how sharp the gradients are drawn
+    //     sharpness: 20,
+    //     sharpnessRandom: 10,
+    //     // Random spread from origin
+    //     spread: 10,
+    //     // How many frames should this last
+    //     duration: -1,
+    //     // Will draw squares instead of circle gradients
+    //     fastMode: false,
+    //     gravity: { x: 0, y: -0.05 },
+    //     // sensible values are 0-3
+    //     jitter: 0,
+    //     // Offset for the origin of the particles
+    //     originOffset: {x: 25, y: 50}
+    //     };
 
-    let btn11 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 140, w: 285, h: 57}).color('#FFF');
-    let btn21 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 217, w: 285, h: 57}).color('#FFF');
-    let btn31 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 294, w: 285, h: 57}).color('#FFF');
-    let btn41 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 371, w: 285, h: 57}).color('#FFF');
-    let btn51 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 448, w: 285, h: 57}).color('#FFF');
+    // Crafty.e("2D, Canvas, Particles")
+    //     .attr({ x: 220, y:10, w: 50, h: 50 })
+    //     //.addComponent('WiredMBR')
+    //     .particles(opciones);
+
+    // Crafty.e("2D, Canvas, Particles")
+    //     .attr({ x: 710, y:10, w: 50, h: 50 })
+    //     //.addComponent('WiredMBR')
+    //     .particles(opciones);
+    
+    let borde11 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 140, w: 285, h: 57}).color('#FFF');
+    let btn11 = Crafty.e("2D, Canvas, Color").attr({x: 104, y: 144, w: 277, h: 49}).color('#FFF');
+    let borde21 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 217, w: 285, h: 57}).color('#FFF');
+    let btn21 = Crafty.e("2D, Canvas, Color").attr({x: 104, y: 221, w: 277, h: 49}).color('#FFF');
+    let borde31 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 294, w: 285, h: 57}).color('#FFF');
+    let btn31 = Crafty.e("2D, Canvas, Color").attr({x: 104, y: 298, w: 277, h: 49}).color('#FFF');
+    let borde41 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 371, w: 285, h: 57}).color('#FFF');
+    let btn41 = Crafty.e("2D, Canvas, Color").attr({x: 104, y: 375, w: 277, h: 49}).color('#FFF');
+    let borde51 = Crafty.e("2D, Canvas, Color").attr({x: 100, y: 448, w: 285, h: 57}).color('#FFF');
+    let btn51 = Crafty.e("2D, Canvas, Color").attr({x: 104, y: 452, w: 277, h: 49}).color('#FFF');
 
     Crafty.e("2D, Canvas, Text").attr({x: 120, y: 155}).text("U-PLANNER")
         .textColor("#000")
@@ -890,35 +998,40 @@ Crafty.scene('nivel4', function(){
         .textColor("#000")
         .textFont({ size: "36px", family: "solano_gothic_mvb_stdBd" });
 
-    let btn12 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 140, w: 325, h: 57}).color('#FFF');
-    let btn22 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 217, w: 325, h: 57}).color('#FFF');
-    let btn32 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 294, w: 325, h: 57}).color('#FFF');
-    let btn42 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 371, w: 325, h: 57}).color('#FFF');
-    let btn52 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 448, w: 325, h: 57}).color('#FFF');
+    let borde12 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 140, w: 325, h: 57}).color('#FFF');
+    let btn12 = Crafty.e("2D, Canvas, Color").attr({x: 594, y: 144, w: 317, h: 49}).color('#FFF');
+    let borde22 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 217, w: 325, h: 57}).color('#FFF');
+    let btn22 = Crafty.e("2D, Canvas, Color").attr({x: 594, y: 221, w: 317, h: 49}).color('#FFF');
+    let borde32 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 294, w: 325, h: 57}).color('#FFF');
+    let btn32 = Crafty.e("2D, Canvas, Color").attr({x: 594, y: 298, w: 317, h: 49}).color('#FFF');
+    let borde42 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 371, w: 325, h: 57}).color('#FFF');
+    let btn42 = Crafty.e("2D, Canvas, Color").attr({x: 594, y: 375, w: 317, h: 49}).color('#FFF');
+    let borde52 = Crafty.e("2D, Canvas, Color").attr({x: 590, y: 448, w: 325, h: 57}).color('#FFF');
+    let btn52 = Crafty.e("2D, Canvas, Color").attr({x: 594, y: 452, w: 317, h: 49}).color('#FFF');
 
     Crafty.e("HTML")
         .attr({x:620, y:151, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#00F', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
         .append("Consulta tus pendientes y tus comprobantes electronicos.");
 
     Crafty.e("HTML")
         .attr({x:620, y:228, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#00F', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
         .append("Realiza todos los tramites y monitorea su estado.");
 
     Crafty.e("HTML")
         .attr({x:620, y:305, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#00F', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
         .append("O centros de informacion con las bases de datos mas completas.");
 
     Crafty.e("HTML")
         .attr({x:620, y:392, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#00F', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
         .append("O Blackboard. Accede a tus clases online.");
 
     Crafty.e("HTML")
         .attr({x:620, y:460, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#00F', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
         .append("Revisa tus notas de cursos, asistencia y realiza reservas.");
 
     // ***********************************************************************
@@ -949,13 +1062,13 @@ Crafty.scene('nivel4', function(){
     // *** .debugStroke("blue")                                ***
     // ***********************************************************
 
-    let pos1 = [370, 142]; // Posicion inicial de la pelota
-    let pos2 = [370, 219]; // Posicion inicial de la pelota
-    let pos3 = [370, 296]; // Posicion inicial de la pelota
-    let pos4 = [370, 373]; // Posicion inicial de la pelota
-    let pos5 = [370, 450]; // Posicion inicial de la pelota
+    let pos1 = [360, 142]; // Posicion inicial de la pelota
+    let pos2 = [360, 219]; // Posicion inicial de la pelota
+    let pos3 = [360, 296]; // Posicion inicial de la pelota
+    let pos4 = [360, 373]; // Posicion inicial de la pelota
+    let pos5 = [360, 450]; // Posicion inicial de la pelota
 
-    let pelota1 = Crafty.e("2D, DOM, Draggable, btnJ4, Collision")
+    let pelota1 = Crafty.e("2D, Canvas, Draggable, btnJ4_1, Collision")
         // .debugFill("purple")
         // .debugStroke("blue")
         //.origin('center')
@@ -968,8 +1081,8 @@ Crafty.scene('nivel4', function(){
                 this.x = 560;
                 this.y = 450;
                 pelota1.removeComponent('Draggable');
-                btn11.color('#A08958');
-                btn52.color('#A08958');
+                borde11.color('#A08958');
+                borde52.color('#A08958');
                 resp_completas += 1;
                 verifJ4Completo();
             }else{
@@ -981,7 +1094,7 @@ Crafty.scene('nivel4', function(){
         //     this.color("black");
         // });
 
-    let pelota2 = Crafty.e("2D, DOM, Draggable, btnJ4, Collision")
+    let pelota2 = Crafty.e("2D, Canvas, Draggable, btnJ4_2, Collision")
         // .debugFill("purple")
         // .debugStroke("blue")
         //.origin('center')
@@ -994,8 +1107,8 @@ Crafty.scene('nivel4', function(){
                 this.x = 560;
                 this.y = 142;
                 pelota2.removeComponent('Draggable');
-                btn21.color('#A08958');
-                btn12.color('#A08958');
+                borde21.color('#C58A70');
+                borde12.color('#C58A70');
                 resp_completas += 1;
                 verifJ4Completo();
             }else{
@@ -1007,7 +1120,7 @@ Crafty.scene('nivel4', function(){
         //     this.color("black");
         // });
 
-    let pelota3 = Crafty.e("2D, DOM, Draggable, btnJ4, Collision")
+    let pelota3 = Crafty.e("2D, Canvas, Draggable, btnJ4_3, Collision")
         // .debugFill("purple")
         // .debugStroke("blue")
         //.origin('center')
@@ -1020,8 +1133,8 @@ Crafty.scene('nivel4', function(){
                 this.x = 560;
                 this.y = 373;
                 pelota3.removeComponent('Draggable');
-                btn31.color('#A08958');
-                btn42.color('#A08958');
+                borde31.color('#B3B3B3');
+                borde42.color('#B3B3B3');
                 resp_completas += 1;
                 verifJ4Completo();
             }else{
@@ -1035,7 +1148,7 @@ Crafty.scene('nivel4', function(){
 
 
 
-    let pelota4 = Crafty.e("2D, DOM, Draggable, btnJ4, Collision")
+    let pelota4 = Crafty.e("2D, Canvas, Draggable, btnJ4_4, Collision")
         // .debugFill("purple")
         // .debugStroke("blue")
         //.origin('center')
@@ -1048,8 +1161,8 @@ Crafty.scene('nivel4', function(){
                 this.x = 560;
                 this.y = 219;
                 pelota4.removeComponent('Draggable');
-                btn41.color('#A08958');
-                btn22.color('#A08958');
+                borde41.color('#BAD6FF');
+                borde22.color('#BAD6FF');
                 resp_completas += 1;
                 verifJ4Completo();
             }else{
@@ -1063,7 +1176,7 @@ Crafty.scene('nivel4', function(){
 
 
 
-    let pelota5 = Crafty.e("2D, DOM, Draggable, btnJ4, Collision")
+    let pelota5 = Crafty.e("2D, Canvas, Draggable, btnJ4_5, Collision")
         // .debugFill("purple")
         // .debugStroke("blue")
         //.origin('center')
@@ -1076,8 +1189,8 @@ Crafty.scene('nivel4', function(){
                 this.x = 560;
                 this.y = 296;
                 pelota5.removeComponent('Draggable');
-                btn51.color('#A08958');
-                btn32.color('#A08958');
+                borde51.color('#DDAF5D');
+                borde32.color('#DDAF5D');
                 resp_completas += 1;
                 verifJ4Completo();
             }else{
@@ -1112,7 +1225,7 @@ Crafty.scene('nivel4', function(){
         tiempoDisp = setInterval(function(){
             tj4 = tj4 + 1;
             Crafty.log('var t: '+tj4);
-            tiempo4.text('Tiempo Transcurrido: '+tj4+'s');
+            tiempo4.text('Tiempo: '+tj4+'s');
         }, 1000);
     }
 
@@ -1172,6 +1285,6 @@ Crafty.scene('test-attach', function(){
     gra1.attach(gra2);
 });
 
-Crafty.scene('ini1');
-//Crafty.scene('nivel2');
+//Crafty.scene('ini1');
+//Crafty.scene('nivel3');
 //Crafty.scene('test-attach');

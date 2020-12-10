@@ -61,6 +61,16 @@ a, a:hover {
   }
   .capa-left, .capa-right {
     width: 150px;
+    img {
+
+      @media screen and (min-width:768px){
+        display: inline-block !important;
+        &:last-child {
+          display: block !important;
+        }
+      }
+      
+    }
     @media screen and (min-width:1360px){
       width: initial;
     }
@@ -70,23 +80,18 @@ a, a:hover {
     
     @media screen and (min-width:768px){
       position: absolute;
-      left: 0;
+      left: -25px;
       bottom: 0;
     }
     > div {
       position: relative;
-      img:first-child {
-        position: absolute;
-        top: -110px;
-        right: -15px;
-      }
     }
   }
 
   .capa-right {
     @media screen and (min-width:768px){
       position: absolute;
-      right: 0;
+      right: -25px;
       bottom: 0;
     }
   }
@@ -504,25 +509,25 @@ html body #juego {
 
 @keyframes floating {
   0% {
-      transform: translateY(-5%) rotate(3deg)
+      transform: translateY(-5%) rotate(2deg)
   }
   65% {
-      transform: translateY(5%) rotate(-3deg)
+      transform: translateY(5%) rotate(-2deg)
   }
   to {
-      transform: translateY(-5%) rotate(3deg)
+      transform: translateY(-5%) rotate(2deg)
   }
 }
 
 @keyframes floating {
   0% {
-      transform: translateY(-5%) rotate(3deg)
+      transform: translateY(-5%) rotate(2deg)
   }
   65% {
-      transform: translateY(5%) rotate(-3deg)
+      transform: translateY(5%) rotate(-2deg)
   }
   to {
-      transform: translateY(-5%) rotate(3deg)
+      transform: translateY(-5%) rotate(2deg)
   }
 }
 

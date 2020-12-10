@@ -45,24 +45,25 @@ a, a:hover {
     color: white; }
   .bg-banner-home .capa-left, .bg-banner-home .capa-right {
     width: 150px; }
+    @media screen and (min-width: 768px) {
+      .bg-banner-home .capa-left img, .bg-banner-home .capa-right img {
+        display: inline-block !important; }
+        .bg-banner-home .capa-left img:last-child, .bg-banner-home .capa-right img:last-child {
+          display: block !important; } }
     @media screen and (min-width: 1360px) {
       .bg-banner-home .capa-left, .bg-banner-home .capa-right {
         width: initial; } }
   @media screen and (min-width: 768px) {
     .bg-banner-home .capa-left {
       position: absolute;
-      left: 0;
+      left: -25px;
       bottom: 0; } }
   .bg-banner-home .capa-left > div {
     position: relative; }
-    .bg-banner-home .capa-left > div img:first-child {
-      position: absolute;
-      top: -110px;
-      right: -15px; }
   @media screen and (min-width: 768px) {
     .bg-banner-home .capa-right {
       position: absolute;
-      right: 0;
+      right: -25px;
       bottom: 0; } }
 
 .title-section {

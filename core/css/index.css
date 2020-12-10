@@ -158,8 +158,85 @@ html body #juego {
     text-decoration: none;
     cursor: pointer; }
 
+.position-floating {
+  position: absolute;
+  top: 52%;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  padding: 0 .3125rem; }
+  @media screen and (min-width: 1024px) {
+    .position-floating {
+      padding: 0; } }
+
 .c-premio-time {
-  background-color: white; }
+  background-color: white;
+  position: relative;
+  padding: 35px 30px 37px;
+  border-radius: 10px;
+  border: 6px solid #B27D4C; }
+  .c-premio-time .c-copa {
+    width: 100%;
+    top: -155px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center; }
+    .c-premio-time .c-copa > div {
+      width: 16rem;
+      margin: 0 auto; }
+    .c-premio-time .c-copa .time {
+      padding: 10px;
+      background-color: #FFDF00;
+      font-family: 'DS-DiGI';
+      font-weight: bold;
+      font-size: 2.1875rem;
+      border-radius: 9px; }
+  .c-premio-time h2 {
+    font-size: 30px;
+    font-family: 'sgothic-bdcap'; }
+  .c-premio-time p {
+    font-size: 20px;
+    margin: 34px 0; }
+
+.btn-style {
+  border: 2px solid;
+  color: white;
+  padding: .75rem 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: #B27D4C;
+  font-family: 'sgothic-bdcap';
+  position: relative;
+  transition: all .35s; }
+  .btn-style i {
+    margin-right: 5px;
+    font-size: 1.1875rem; }
+  .btn-style span, .btn-style i {
+    position: relative;
+    z-index: 10;
+    margin: 0 5px; }
+  .btn-style:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: all .35s; }
+  .btn-style:hover {
+    text-decoration: none;
+    color: #B27D4C;
+    border-radius: 0;
+    width: 300px;
+    border: 2px solid #B27D4C;
+    box-shadow: 0 0 0 2px black;
+    box-shadow: 2px 3px 6px #989898;
+    height: 100%; }
+  .btn-style:hover:after {
+    width: 100%;
+    height: 100%; }
 
 footer {
   background-color: #222222;

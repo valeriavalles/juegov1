@@ -380,14 +380,14 @@ html body #juego {
   0% {
     transform: translateY(-5%) rotate(2deg); }
   65% {
-    transform: translateY(5%) rotate(-2deg); }
+    transform: translateY(-18%) rotate(-2deg); }
   to {
     transform: translateY(-5%) rotate(2deg); } }
 @keyframes floating {
   0% {
     transform: translateY(-5%) rotate(2deg); }
   65% {
-    transform: translateY(5%) rotate(-2deg); }
+    transform: translateY(-18%) rotate(-2deg); }
   to {
     transform: translateY(-5%) rotate(2deg); } }
 footer {

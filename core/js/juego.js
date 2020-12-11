@@ -2,7 +2,7 @@ Crafty.init(1024, 576, document.getElementById('juego'));
 
 var obj = {
     "sprites": {
-        // "core/img/tapa.png": { // Carga el objeto desde una carpeta en la raiz del proyecto
+        // "../core/img/tapa.png": { // Carga el objeto desde una carpeta en la raiz del proyecto
         // //"http://localhost/upcJuego2/objs/tapa256.png": { // Carga el objeto desde una URL
         // // "tapa.png": { // carga el objeto desde la raiz del proyecto
         //     tile: 128, // Ancho de la imagen
@@ -54,6 +54,13 @@ var obj = {
                 botSalirPres: [0, 0]
             }
         },
+        "../core/img/btnJugar.png": {
+            tile: 290,
+            tileh: 92,
+            map: {
+                btnJugar: [0, 0]
+            }
+        },
         "../core/img/barra1.png": {
             tile: 130,
             tileh: 20,
@@ -95,6 +102,13 @@ var obj = {
             tileh: 67,
             map: {
                 b1_C: [0, 0]
+            }
+        },
+        "../core/img/popup1.png": {
+            tile: 537,
+            tileh: 352,
+            map: {
+                Popup1: [0, 0]
             }
         },
         // ======= Juego 2 =======
@@ -161,6 +175,14 @@ var obj = {
                 p8: [0, 0]
             }
         },
+        // ======= Juego 3 =======
+        "../core/img/texto_juego3.png": {
+            tile: 601,
+            tileh: 34,
+            map: {
+                textoJuego3: [0, 0]
+            }
+        },
         // ======= Juego 4 =======
         "../core/img/gra1.png": {
             tile: 42,
@@ -216,8 +238,8 @@ var obj = {
 
 Crafty.load(obj,
     function(){
-        Crafty.scene('ini1');
-        //Crafty.scene('nivel4');
+        //Crafty.scene('ini1');
+        Crafty.scene('nivel1');
     },
 
     function(e) { //progreso
@@ -233,7 +255,7 @@ Crafty.scene('ini1', function(){
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn1").attr({x:230, y:80});
-    let botonJugar = Crafty.e("2D, Canvas, Mouse, Image").image('../core/img/btnJugar.png').attr({x:360, y:380});
+    let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
 
     botonJugar.bind('Click', function(MouseEvent){
         Crafty.scene('nivel1');
@@ -275,6 +297,14 @@ Crafty.scene('nivel1', function(){
 
     ocultarTapa();
 
+    // ======= Popup1 =======
+
+    let popup1 = Crafty.e("2D, Canvas, Popup1").attr({ x: 240, y:100 });
+    let btnPopup1 = Crafty.e("2D, Canvas").attr({ x: 400, y: 352, w: 215, h: 57 });
+    popup1.visible = false;
+
+    // ======================
+
     bot1.bind('Click', function(MouseEvent){
         tapa1.visible = true;
         bot1.removeComponent('Mouse');
@@ -292,12 +322,19 @@ Crafty.scene('nivel1', function(){
 
     bot4.bind('Click', function(MouseEvent){
         tapa4.visible = true;
+        popup1.visible = true;
         bot4.removeComponent('Mouse');
-        Crafty.log('Tiempo final: '+tj1);
+        btnPopup1.addComponent('Mouse');
+        // Crafty.log('Tiempo final: '+tj1);
         clearInterval(tiempoDisp);
-        setTimeout(function(){
-            Crafty.scene('ini2');
-        }, 1500)
+        // setTimeout(function(){
+        //     Crafty.scene('ini2');
+        // }, 1500)
+    })
+
+    btnPopup1.bind('Click', function(EventMouse){
+        Crafty.log('Tiempo final: '+tj1);
+        Crafty.scene('ini2');
     })
 
     bot5.bind('Click', function(MouseEvent){
@@ -345,7 +382,8 @@ Crafty.scene('nivel1', function(){
         btnSalirPres.visible = false;
     })
     btnSalir.bind('Click', function(MouseEvent){
-        Crafty.log('Salir');
+        // Crafty.log('Salir');
+        modal.style.display = "block";
     })
 
 });
@@ -355,7 +393,7 @@ Crafty.scene('ini2', function(){
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn2").attr({x:230, y:80});
-    let botonJugar = Crafty.e("2D, Canvas, Mouse, Image").image('../core/img/btnJugar.png').attr({x:360, y:380});
+    let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
 
     botonJugar.bind('Click', function(MouseEvent){
         Crafty.scene('nivel2');
@@ -545,13 +583,13 @@ Crafty.scene('nivel2', function(){
                 //Crafty.log('->-'+arr_botSelec);
                 //Crafty.log('-->>-- '+arr_palabras);
                 if(arr_palabras[0] == 'palabra1'){
-                    fondo_p1.color('#A08958');
+                    fondo_p1.color('#B27D4C');
                 }else if(arr_palabras[0] == 'palabra2'){
-                    fondo_p2.color('#A08958');
+                    fondo_p2.color('#B27D4C');
                 }else if(arr_palabras[0] == 'palabra3'){
-                    fondo_p3.color('#A08958');
+                    fondo_p3.color('#B27D4C');
                 }else if(arr_palabras[0] == 'palabra4'){
-                    fondo_p4.color('#A08958');
+                    fondo_p4.color('#B27D4C');
                 }
                 puntaje += 1;
                 victoria();
@@ -658,7 +696,7 @@ Crafty.scene('ini3', function(){
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn3").attr({x:230, y:80});
-    let botonJugar = Crafty.e("2D, Canvas, Mouse, Image").image('../core/img/btnJugar.png').attr({x:360, y:380});
+    let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
 
     botonJugar.bind('Click', function(MouseEvent){
         Crafty.log('Inicio Nivel 3');
@@ -680,17 +718,11 @@ Crafty.scene('nivel3', function(){
 
     Crafty.e("2D, Canvas, Barra3").attr({ x: 162, y: 22 });
 
-    Crafty.e("2D, Canvas, Text").attr({ x: 80, y: 75 }).text("ENCUENTRA LAS PALABRAS")
-        .textColor('#FFF')
-        .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
+    Crafty.e("2D, Canvas, textoJuego3").attr({ x:67, y:67 });
 
     let tiempo3 = Crafty.e("2D, Canvas, Text").attr({x: 820, y: 20}).text('Tiempo: 0s')
         .textColor('#AAA')
         .textFont({ size: '30px', family: 'solano_gothic_mvb_stdBd' });
-
-    Crafty.e("2D, Canvas, Text").attr({x: 80, y: 540}).text('* Selecciona la primera y la ultima letra de la palabra que has encontrado')
-        .textColor('#FFF')
-        .textFont({ size: '16px' });
 
     Crafty.e("2D, Canvas, Text").attr({ x: 700, y: 120 }).text("ENCUENTRA LAS PALABRAS:")
         .textColor('#FFF')
@@ -810,35 +842,35 @@ Crafty.scene('nivel3', function(){
     function activ_palabras(){
         if(vaa1 == 1 && vaa2 == 1){
             pal1.visible = true;
-            fondo_btn4.color('#A08958');
+            fondo_btn4.color('#B27D4C');
             aa1.removeComponent('Mouse');
             aa2.removeComponent('Mouse');
             verifJ3Completo();
         }
         if(vaa3 == 1 && vaa4 == 1){
             pal2.visible = true;
-            fondo_btn5.color('#A08958');
+            fondo_btn5.color('#B27D4C');
             aa3.removeComponent('Mouse');
             aa4.removeComponent('Mouse');
             verifJ3Completo();
         }
         if(vaa5 == 1 && vaa6 == 1){
             pal3.visible = true;
-            fondo_btn3.color('#A08958');
+            fondo_btn3.color('#B27D4C');
             aa5.removeComponent('Mouse');
             aa6.removeComponent('Mouse');
             verifJ3Completo();
         }
         if(vaa7 == 1 && vaa8 == 1){
             pal4.visible = true;
-            fondo_btn2.color('#A08958');
+            fondo_btn2.color('#B27D4C');
             aa7.removeComponent('Mouse');
             aa8.removeComponent('Mouse');
             verifJ3Completo();
         }
         if(vaa9 == 1 && vaa10 == 1){
             pal5.visible = true;
-            fondo_btn1.color('#A08958');
+            fondo_btn1.color('#B27D4C');
             aa9.removeComponent('Mouse');
             aa10.removeComponent('Mouse');
             verifJ3Completo();
@@ -891,7 +923,7 @@ Crafty.scene('ini4', function(){
     Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn4").attr({x:230, y:80});
-    let botonJugar = Crafty.e("2D, Canvas, Mouse, Image").image('../core/img/btnJugar.png').attr({x:360, y:380});
+    let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
 
     botonJugar.bind('Click', function(MouseEvent){
         Crafty.scene('nivel4');
@@ -1011,27 +1043,27 @@ Crafty.scene('nivel4', function(){
 
     Crafty.e("HTML")
         .attr({x:620, y:151, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'Nunito-SemiBold'})
         .append("Consulta tus pendientes y tus comprobantes electronicos.");
 
     Crafty.e("HTML")
         .attr({x:620, y:228, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'Nunito-SemiBold'})
         .append("Realiza todos los tramites y monitorea su estado.");
 
     Crafty.e("HTML")
         .attr({x:620, y:305, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'Nunito-SemiBold'})
         .append("O centros de informacion con las bases de datos mas completas.");
 
     Crafty.e("HTML")
-        .attr({x:620, y:392, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .attr({x:620, y:384, w:280, h:42})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'Nunito-SemiBold'})
         .append("O Blackboard. Accede a tus clases online.");
 
     Crafty.e("HTML")
         .attr({x:620, y:460, w:280, h:42})
-        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'solano_gothic_mvb_stdBd'})
+        .css({'background-color': 'transparent', 'font-size': '18px', 'color': '#000', 'font-family': 'Nunito-SemiBold'})
         .append("Revisa tus notas de cursos, asistencia y realiza reservas.");
 
     // ***********************************************************************
@@ -1249,42 +1281,40 @@ Crafty.scene('nivel4', function(){
 
 });
 
-Crafty.scene('test-attach', function(){
-//
-    Crafty.background('#000');
+// Crafty.scene('test-attach', function(){
 
-    let gra1 = Crafty.e("2D, Canvas, Color, Keyboard")
-        .attr({x: 30, y: 30, w:20, h:20})
-        .color('#0F0')
-        .bind('KeyDown', function(e) {
-            if (e.key == Crafty.keys.LEFT_ARROW) {
-                data1();
-                this.x -= 10;
-            } else if (e.key == Crafty.keys.RIGHT_ARROW) {
-                data1();
-                this.x += 10;
-            } else if (e.key == Crafty.keys.UP_ARROW) {
-                data1();
-                this.y -= 10;
-            } else if (e.key == Crafty.keys.DOWN_ARROW) {
-                data1();
-                this.y += 10;
-            }
-        });
+//     Crafty.background('#000');
 
-    function data1(){
-        Crafty.log('X: '+gra1.x+ ' Y: '+gra1.y);
-    }
+//     let gra1 = Crafty.e("2D, Canvas, Color, Keyboard")
+//         .attr({x: 30, y: 30, w:20, h:20})
+//         .color('#0F0')
+//         .bind('KeyDown', function(e) {
+//             if (e.key == Crafty.keys.LEFT_ARROW) {
+//                 data1();
+//                 this.x -= 10;
+//             } else if (e.key == Crafty.keys.RIGHT_ARROW) {
+//                 data1();
+//                 this.x += 10;
+//             } else if (e.key == Crafty.keys.UP_ARROW) {
+//                 data1();
+//                 this.y -= 10;
+//             } else if (e.key == Crafty.keys.DOWN_ARROW) {
+//                 data1();
+//                 this.y += 10;
+//             }
+//         });
 
-    let gra2 = Crafty.e("2D, Canvas, Color")
-        .attr({x: 0, y: 0, w:20, h:20})
-        //.attr({x: gra1.x, y: gra1.y, w:20, h:20})
-        //.attr({w:20, h:20})
-        .color('#0FF')
+//     function data1(){
+//         Crafty.log('X: '+gra1.x+ ' Y: '+gra1.y);
+//     }
 
-    gra1.attach(gra2);
-});
+//     let gra2 = Crafty.e("2D, Canvas, Color")
+//         .attr({x: 0, y: 0, w:20, h:20})
+//         //.attr({x: gra1.x, y: gra1.y, w:20, h:20})
+//         //.attr({w:20, h:20})
+//         .color('#0FF')
 
-//Crafty.scene('ini1');
-//Crafty.scene('nivel3');
+//     gra1.attach(gra2);
+// });
+
 //Crafty.scene('test-attach');

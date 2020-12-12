@@ -2,7 +2,7 @@ Crafty.init(1024, 576, document.getElementById('juego'));
 
 var obj = {
     "sprites": {
-        // "../core/img/tapa.png": { // Carga el objeto desde una carpeta en la raiz del proyecto
+        // "core/img/tapa.png": { // Carga el objeto desde una carpeta en la raiz del proyecto
         // //"http://localhost/upcJuego2/objs/tapa256.png": { // Carga el objeto desde una URL
         // // "tapa.png": { // carga el objeto desde la raiz del proyecto
         //     tile: 128, // Ancho de la imagen
@@ -12,77 +12,77 @@ var obj = {
         //     }
         // },
         // ======= General =======
-        "../core/img/pn1.png": {
+        "core/img/pn1.png": {
             tile: 538,
             tileh: 371,
             map: {
                 pn1: [0, 0]
             }
         },
-        "../core/img/pn2.png": {
+        "core/img/pn2.png": {
             tile: 538,
             tileh: 371,
             map: {
                 pn2: [0, 0]
             }
         },
-        "../core/img/pn3.png": {
+        "core/img/pn3.png": {
             tile: 538,
             tileh: 371,
             map: {
                 pn3: [0, 0]
             }
         },
-        "../core/img/pn4.png": {
+        "core/img/pn4.png": {
             tile: 538,
             tileh: 371,
             map: {
                 pn4: [0, 0]
             }
         },
-        "../core/img/botSalir.png": {
+        "core/img/botSalir.png": {
             tile: 202,
             tileh: 45,
             map: {
                 botSalir: [0, 0]
             }
         },
-        "../core/img/botSalirPres.png": {
+        "core/img/botSalirPres.png": {
             tile: 202,
             tileh: 45,
             map: {
                 botSalirPres: [0, 0]
             }
         },
-        "../core/img/btnJugar.png": {
+        "core/img/btnJugar.png": {
             tile: 290,
             tileh: 92,
             map: {
                 btnJugar: [0, 0]
             }
         },
-        "../core/img/barra1.png": {
+        "core/img/barra1.png": {
             tile: 130,
             tileh: 20,
             map: {
                 Barra1: [0, 0]
             }
         },
-        "../core/img/barra2.png": {
+        "core/img/barra2.png": {
             tile: 130,
             tileh: 20,
             map: {
                 Barra2: [0, 0]
             }
         },
-        "../core/img/barra3.png": {
+        "core/img/barra3.png": {
             tile: 130,
             tileh: 20,
             map: {
                 Barra3: [0, 0]
             }
         },
-        "../core/img/barra4.png": {
+        "core/img/barra4.png": {
             tile: 130,
             tileh: 20,
             map: {
@@ -90,21 +90,21 @@ var obj = {
             }
         },
         // ======= Juego 1 =======
-        "../core/img/b1_E.png": {
+        "core/img/b1_E.png": {
             tile: 296,
             tileh: 67,
             map: {
                 b1_E: [0, 0]
             }
         },
-        "../core/img/b1_C.png": {
+        "core/img/b1_C.png": {
             tile: 296,
             tileh: 67,
             map: {
                 b1_C: [0, 0]
             }
         },
-        "../core/img/popup1.png": {
+        "core/img/popup1.png": {
             tile: 537,
             tileh: 352,
             map: {
@@ -112,63 +112,63 @@ var obj = {
             }
         },
         // ======= Juego 2 =======
-        "../core/img/tapa.png": {
+        "core/img/tapa.png": {
             tile: 128,
             tileh: 128,
             map: {
                 tapa: [0, 0]
             }
         },
-        "../core/img/p1.png": {
+        "core/img/p1.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p1: [0, 0]
             }
         },
-        "../core/img/p2.png": {
+        "core/img/p2.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p2: [0, 0]
             }
         },
-        "../core/img/p3.png": {
+        "core/img/p3.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p3: [0, 0]
             }
         },
-        "../core/img/p4.png": {
+        "core/img/p4.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p4: [0, 0]
             }
         },
-        "../core/img/p5.png": {
+        "core/img/p5.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p5: [0, 0]
             }
         },
-        "../core/img/p6.png": {
+        "core/img/p6.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p6: [0, 0]
             }
         },
-        "../core/img/p7.png": {
+        "core/img/p7.png": {
             tile: 128,
             tileh: 128,
             map: {
                 p7: [0, 0]
             }
         },
-        "../core/img/p8.png": {
+        "core/img/p8.png": {
             tile: 128,
             tileh: 128,
             map: {
@@ -176,7 +176,7 @@ var obj = {
             }
         },
         // ======= Juego 3 =======
-        "../core/img/texto_juego3.png": {
+        "core/img/texto_juego3.png": {
             tile: 601,
             tileh: 34,
             map: {
@@ -184,49 +184,49 @@ var obj = {
             }
         },
         // ======= Juego 4 =======
-        "../core/img/gra1.png": {
+        "core/img/gra1.png": {
             tile: 42,
             tileh: 40,
             map: {
                 gra1: [0, 0]
             }
         },
-        // "../core/img/btnJ4.png": {
+        // "core/img/btnJ4.png": {
         //     tile: 50,
         //     tileh: 50,
         //     map: {
         //         btnJ4: [0, 0]
         //     }
         // },
-        "../core/img/btnJ4-1.png": {
+        "core/img/btnJ4-1.png": {
             tile: 50,
             tileh: 50,
             map: {
                 btnJ4_1: [0, 0]
             }
         },
-        "../core/img/btnJ4-2.png": {
+        "core/img/btnJ4-2.png": {
             tile: 50,
             tileh: 50,
             map: {
                 btnJ4_2: [0, 0]
             }
         },
-        "../core/img/btnJ4-3.png": {
+        "core/img/btnJ4-3.png": {
             tile: 50,
             tileh: 50,
             map: {
                 btnJ4_3: [0, 0]
             }
         },
-        "../core/img/btnJ4-4.png": {
+        "core/img/btnJ4-4.png": {
             tile: 50,
             tileh: 50,
             map: {
                 btnJ4_4: [0, 0]
             }
         },
-        "../core/img/btnJ4-5.png": {
+        "core/img/btnJ4-5.png": {
             tile: 50,
             tileh: 50,
             map: {
@@ -252,7 +252,7 @@ Crafty.load(obj,
 
 Crafty.scene('ini1', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn1").attr({x:230, y:80});
     let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
@@ -265,7 +265,7 @@ Crafty.scene('ini1', function(){
 
 Crafty.scene('nivel1', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo.png');
 
     Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 1')
         .textColor('#FFF')
@@ -281,12 +281,12 @@ Crafty.scene('nivel1', function(){
         .textColor('#FFF')
         .textFont({ size: '46px', family: 'solano_gothic_mvb_stdBd' });
 
-    let bot1 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 260 }).image('../core/img/b1_1.png');
-    let bot2 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 260 }).image('../core/img/b1_2.png');
-    let bot3 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 260 }).image('../core/img/b1_3.png');
-    let bot4 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 350 }).image('../core/img/b1_4.png');
-    let bot5 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 350 }).image('../core/img/b1_5.png');
-    let bot6 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 350 }).image('../core/img/b1_6.png');
+    let bot1 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 260 }).image('core/img/b1_1.png');
+    let bot2 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 260 }).image('core/img/b1_2.png');
+    let bot3 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 260 }).image('core/img/b1_3.png');
+    let bot4 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 50, y: 350 }).image('core/img/b1_4.png');
+    let bot5 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 360, y: 350 }).image('core/img/b1_5.png');
+    let bot6 = Crafty.e("2D, Canvas, Image, Mouse").attr({ x: 670, y: 350 }).image('core/img/b1_6.png');
 
     let tapa1 = Crafty.e("2D, Canvas, b1_E").attr({ x: 50, y: 260 });
     let tapa2 = Crafty.e("2D, Canvas, b1_E").attr({ x: 360, y: 260 });
@@ -390,7 +390,7 @@ Crafty.scene('nivel1', function(){
 
 Crafty.scene('ini2', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn2").attr({x:230, y:80});
     let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
@@ -403,7 +403,7 @@ Crafty.scene('ini2', function(){
 
 Crafty.scene('nivel2', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo.png');
 
     Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 2')
         .textColor('#FFF')
@@ -693,7 +693,7 @@ Crafty.scene('nivel2', function(){
 
 Crafty.scene('ini3', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn3").attr({x:230, y:80});
     let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
@@ -708,9 +708,9 @@ Crafty.scene('ini3', function(){
 
 Crafty.scene('nivel3', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
-    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:110 }).image('../core/img/fondo_juego3.png');
-    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:480 }).image('../core/img/pasto.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo2.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:110 }).image('core/img/fondo_juego3.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 80, y:480 }).image('core/img/pasto.png');
 
     Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 3')
         .textColor('#FFF')
@@ -784,11 +784,11 @@ Crafty.scene('nivel3', function(){
 
     // ======= Palabras =======
 
-    let pal1 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:110 }).image('../core/img/pal1.png');
-    let pal2 = Crafty.e("2D, Canvas, Image").attr({ x: 125, y:155 }).image('../core/img/pal2.png');
-    let pal3 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:245 }).image('../core/img/pal3.png');
-    let pal4 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:335 }).image('../core/img/pal4.png');
-    let pal5 = Crafty.e("2D, Canvas, Image").attr({ x: 574.7, y:110 }).image('../core/img/pal5.png');
+    let pal1 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:110 }).image('core/img/pal1.png');
+    let pal2 = Crafty.e("2D, Canvas, Image").attr({ x: 125, y:155 }).image('core/img/pal2.png');
+    let pal3 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:245 }).image('core/img/pal3.png');
+    let pal4 = Crafty.e("2D, Canvas, Image").attr({ x: 80, y:335 }).image('core/img/pal4.png');
+    let pal5 = Crafty.e("2D, Canvas, Image").attr({ x: 574.7, y:110 }).image('core/img/pal5.png');
 
     pal1.visible = false;
     pal2.visible = false;
@@ -920,7 +920,7 @@ Crafty.scene('nivel3', function(){
 
 Crafty.scene('ini4', function(){
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, pn4").attr({x:230, y:80});
     let botonJugar = Crafty.e("2D, Canvas, Mouse, btnJugar").attr({x:360, y:380});
@@ -935,7 +935,7 @@ Crafty.scene('nivel4', function(){
 
     let resp_completas = 0;
 
-    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('../core/img/fondo2.png');
+    Crafty.e("2D, Canvas, Image").attr({ x: 0, y: 0 }).image('core/img/fondo2.png');
 
     Crafty.e("2D, Canvas, Text").attr({x: 80, y: 20}).text('NIVEL 4')
         .textColor('#FFF')

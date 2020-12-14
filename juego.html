@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="core/css/reset.css">
     <link rel="stylesheet" href="core/css/fuentes.css">
-    <link rel="stylesheet" href="core/css/index.css">
+    <link rel="stylesheet" href="core/css/main.css">
     <title>UPC - Gamer</title>
 
 </head>
@@ -19,7 +18,7 @@
             <div class="row">
                 <div class="col-md-12 text-right">
                     <div class="pt-4 pb-4">
-                        <img src="https://www.upc.edu.pe/landings/brain-hackers/images/crisol-white.svg" alt="logo"
+                        <img src="assets/img/crisol-white.svg" alt="logo"
                             class="item">
                     </div>
                 </div>
@@ -29,23 +28,15 @@
         <div id="juego"></div>
     </section>
 
-
-    <!-- Trigger/Open The Modal -->
-    <!-- <button id="myBtn">Open Modal</button> -->
-
-    
     <div id="myModal" class="modalgamer">
 
-     
+        <!-- Modal content -->
         <div class="modal-content-gamer">
             <div class="relative">
                 <div class="text-right header-icon">
-                    
-                    <div class="close-gamer">
+                    <div class="close-gamer line-height">
                         <img src="assets/img/icon-x.svg" alt="">
                     </div>
-                   
-                    
                 </div>
                 <div class="modal-main">
                     <div>
@@ -53,13 +44,13 @@
                         <p>Tu progreso no se registrará en el ranking y no podrás participar del sorteo.</p>
 
                         <div class="c-btns-modal d-flex justify-content-center">
-                            <a href="http://" target="_blank" rel="noopener noreferrer">SALIR</a>
-                            <a href="http://" target="_blank" rel="noopener noreferrer">SEGUIR JUGANDO</a>
+                            <a href="/" rel="noopener noreferrer">SALIR</a>
+                            <a href="#" class="close-gamer" rel="noopener noreferrer">SEGUIR JUGANDO</a>
                         </div>
                     </div>
                 </div>
             </div>
-           
+
         </div>
 
     </div>
@@ -68,7 +59,6 @@
     <script type="text/javascript" src="core/js/crafty-min.js"></script>
     <script type="text/javascript" src="core/js/juego.js"></script>
     <script>
-
         // Get the modal
         var modal = document.getElementById("myModal");
 
@@ -76,26 +66,22 @@
         var btn = document.getElementById("myBtn");
 
         // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close-gamer")[0];
-
-        // When the user clicks the button, open the modal 
-        // btn.onclick = function () {
-        //     modal.style.display = "block";
-        // }
-
+        var span = document.querySelectorAll(".close-gamer");
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
+        for (i = 0; i < span.length; ++i) {
+            span[i].onclick = function() {
+                modal.style.display = "none";
+            }
+        };
 
         // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target == modal) {
-                    modal.style.display = "none";
-                }
+                modal.style.display = "none";
             }
+        }
     </script>
-    
+
 
 </body>
 

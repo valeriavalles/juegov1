@@ -225,20 +225,23 @@ html body #juego {
   > div {
     background-color: white;
     padding: 25px 20px;
-    height: 344px;
-    @media screen and (min-width:768px){
-      height: 314px;
-    }
+    // height: 344px;
+    // @media screen and (min-width:768px){
+    //   height: 314px;
+    // }
   }
   form {
     padding: 25px 10px;
     text-align: left;
+    margin-bottom: 25px;
     @media screen and (min-width:968px){
       padding: 25px 55px 10px;
     }
-
+    .form-control {
+      margin-bottom: 10px;
+    }
     .bg-btn {
-      background-image: url('../../assets/img/btn-login.svg');
+      background-image: url('../../assets/img/btn-disabled.svg');
       display: inline-block;
       width: 219px;
       height: 69px;
@@ -274,7 +277,6 @@ html body #juego {
     }
   }
 }
-
 
 //----- Component Modal ---------
 
@@ -417,10 +419,12 @@ html body #juego {
   h2 {
     font-size: 30px;
     font-family: 'sgothic-bdcap';
+    margin-top: 18px;
+    margin-bottom: 0;
   }
   p {
     font-size: 20px;
-    margin: 34px 0;
+    margin: 22px 0;
   }
   // btn 
   a {
@@ -441,11 +445,9 @@ html body #juego {
 
 .btn-style {
   border: 2px solid ;
-  // color: white;
   padding: .75rem 2rem;
   text-align: center;
   font-size: 1.25rem;
-  // background-color:#B27D4C;
   font-family: 'sgothic-bdcap';
   position: relative;
   transition: all .35s;
@@ -473,10 +475,8 @@ html body #juego {
   }
   &:hover{
     text-decoration: none;
-    // color: #B27D4C;
     border-radius: 0;
     width: 250px;
-    // border:2px solid #B27D4C;
     box-shadow: 0 0 0 2px black;
     box-shadow: 2px 3px 6px #989898;
     height: 100%;
